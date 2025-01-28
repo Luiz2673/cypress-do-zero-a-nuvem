@@ -1,3 +1,5 @@
+const { should } = require("chai");
+
 describe('Central de Atendimento ao Cliente TAT', () => {
   beforeEach(() => {
     cy.visit('./src/index.html');
@@ -72,5 +74,23 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.fillMandatoryFieldsAndSubmit()
 
     cy.get('.success').should('be.visible')
+  })
+
+  it('seleciona um produto (YouTube) por seu texto', () =>{
+    cy.get('select')
+      .select('YouTube')
+      .should('have.value', 'youtube')
+  })
+
+  it('seleciona um produto (Mentoria) por seu valor (value)', () =>{
+    cy.get('select')
+      .select('mentoria')
+      .should('have.value', 'mentoria')
+  })
+
+  it('seleciona um produto (Blog) por seu índice',() =>{
+    cy.get('select')
+      .select(1)
+      .should('have.value', 'blog')
   })
 })
