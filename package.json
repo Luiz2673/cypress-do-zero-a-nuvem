@@ -25,6 +25,7 @@
   "homepage": "https://github.com/wlsf82/cypress-do-zero-a-nuvem#readme",
   "devDependencies": {
     "chai": "^5.1.2",
-    "cypress": "^13.12.0"
+    "cypress": "^13.12.0",
+    "cypress-xpath": "^2.0.1"
   }
 }
